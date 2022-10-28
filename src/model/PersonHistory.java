@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Pranav
  */
 public class PersonHistory {
-     private ArrayList<Person> personhistory;
+    private ArrayList<Person> personhistory;
 
     public ArrayList<Person> getPersonhistory() {
         return personhistory;
@@ -31,13 +31,13 @@ public class PersonHistory {
         personhistory.add(person);
         return person ; 
     }
-   public Person deletePerson(Person person){
+   public void deletePerson(Person person){
        personhistory.remove(person);
-       return person;
+       
    }
-   public Person updatePerson(){
-        Person person = new Person();
-        personhistory.add(person);
-        return person ; 
-    }
+   
+   public void updatedPerson(Person person , int rowIndex){
+       personhistory.set(rowIndex,person);
+   }
+
 }

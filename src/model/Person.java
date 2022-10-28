@@ -9,12 +9,12 @@ package model;
  * @author Pranav
  */
 public class Person {
-    String Name;
-    String Age; 
-    String Gender;
-    String City;
-    String ContactNumber;
-    
+    private String Name;
+    private String Age;
+    private String Gender;
+    private String City;
+    private String PhoneNumber ;
+
     public String getName() {
         return Name;
     }
@@ -47,11 +47,15 @@ public class Person {
         this.City = City;
     }
 
-    public String getContactNumber() {
-        return ContactNumber;
+    public String getPhoneNumber() {
+        return PhoneNumber;
     }
 
-    public void setContactNumber(String ContactNumber) {
-        this.ContactNumber = ContactNumber;
+    public void setPhoneNumber(String PhoneNumber) {
+        this.PhoneNumber = PhoneNumber;
+    }
+     @Override
+    public String toString(){
+        return Name;
     }
 }
