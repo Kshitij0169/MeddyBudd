@@ -10,7 +10,7 @@ import model.PersonHistory;
 
 /**
  *
- * @author Pranav
+ * @author kshitijkumartiwari
  */
 public class SysAdminCreatePersonPanel extends javax.swing.JPanel {
 

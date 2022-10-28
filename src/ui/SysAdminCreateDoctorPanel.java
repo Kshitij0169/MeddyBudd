@@ -306,8 +306,7 @@ public void deleterowfromPersonTable(){
     int selectedRowIndex = tblPerson.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this, "Please select a row to delete.");
-            return;
-           
+            return; 
         }
          DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
          Person selectedPerson =(Person) model.getValueAt(selectedRowIndex , 0);

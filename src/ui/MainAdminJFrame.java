@@ -10,7 +10,7 @@ import model.PersonHistory;
 
 /**
  *
- * @author Pranav
+ * @author kshitijkumartiwari
  */
 public class MainAdminJFrame extends javax.swing.JFrame {
     PersonHistory perHistory ; 
