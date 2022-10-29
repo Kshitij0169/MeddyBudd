@@ -258,7 +258,6 @@ public class SysAdminCreateDoctorPanel extends javax.swing.JPanel {
         d.setHospName(HospName);
         JOptionPane.showMessageDialog(this, "Doctor has been created !! "); 
         clrfeilds();
-        populateTable();
         deleterowfromPersonTable();
         
     }//GEN-LAST:event_btnAddDoctorActionPerformed
