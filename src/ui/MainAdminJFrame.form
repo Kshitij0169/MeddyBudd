@@ -50,19 +50,19 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnAdd" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="btnAddDoctor" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="btnViewDoctor" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnView" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="btnViewDoctor" alignment="1" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="btnAdd" linkSize="1" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="btnAddDoctor" linkSize="1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="btnView" linkSize="1" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Component id="btnViewPatient" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddPatient" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -80,7 +80,11 @@
                       <Component id="btnAddDoctor" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnViewDoctor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="432" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnAddPatient" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnViewPatient" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="350" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -96,7 +100,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnView">
               <Properties>
-                <Property name="text" type="java.lang.String" value="View Person"/>
+                <Property name="text" type="java.lang.String" value=" Person Directory"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewActionPerformed"/>
@@ -112,10 +116,26 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnViewDoctor">
               <Properties>
-                <Property name="text" type="java.lang.String" value="View Doctor"/>
+                <Property name="text" type="java.lang.String" value="Doctor Directory"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewDoctorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAddPatient">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Add Patient"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddPatientActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnViewPatient">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Patient Directory"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewPatientActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

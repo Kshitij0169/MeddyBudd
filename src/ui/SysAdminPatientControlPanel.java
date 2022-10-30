@@ -6,27 +6,26 @@ package ui;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Doctor;
-import model.DoctorHistory;
-import model.Person;
+import model.Patient;
+import model.PatientHistory;
 import model.PersonHistory;
 
 /**
  *
  * @author kshitijkumartiwari
  */
-public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
+public class SysAdminPatientControlPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SysAdminViewDoctorPanel
+     * Creates new form SysAdminPatientControlPanel
      */
-    DoctorHistory docHistory;
     PersonHistory perHistory ;
-    public SysAdminDoctorControlPanel(PersonHistory perHistory, DoctorHistory docHistory) {
+    PatientHistory pathistory;
+    public SysAdminPatientControlPanel(PersonHistory perHistory, PatientHistory pathistory) {
         initComponents();
         this.perHistory=perHistory;
-        this.docHistory = docHistory;
-        populateTable();
+        this.pathistory=pathistory;
+        populatePatientTable();
     }
 
     /**
@@ -38,29 +37,29 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtStreet = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDoctor = new javax.swing.JTable();
-        lblTitleDoc = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtDocId = new javax.swing.JTextField();
-        txtName = new javax.swing.JTextField();
-        lblHospName = new javax.swing.JLabel();
-        txtAge = new javax.swing.JTextField();
-        lblHospName1 = new javax.swing.JLabel();
-        txtGender = new javax.swing.JTextField();
-        txtHospName = new javax.swing.JTextField();
+        tblPatient = new javax.swing.JTable();
         txtCity = new javax.swing.JTextField();
         txtContactNumber = new javax.swing.JTextField();
+        lblTitleDoc = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         drpGender = new javax.swing.JComboBox<>();
+        txtHouseNo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        lblHospName = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
+        lblHospName1 = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
+        txtGender = new javax.swing.JTextField();
         btnView = new javax.swing.JButton();
 
-        tblDoctor.setModel(new javax.swing.table.DefaultTableModel(
+        tblPatient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -68,21 +67,17 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Gender", "City", "Phone-Number", "Hospital Name", "Doctor ID"
+                "Name", "Age", "Gender", "City", "Phone-Number", "Street", "House No."
             }
         ));
-        jScrollPane1.setViewportView(tblDoctor);
+        jScrollPane1.setViewportView(tblPatient);
 
         lblTitleDoc.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
-        lblTitleDoc.setText("Control Doctor Directory");
-
-        jLabel6.setText("Contact-Number :");
-
-        lblHospName.setText("Hospital Name:");
-
-        lblHospName1.setText("Doctor ID:");
+        lblTitleDoc.setText("Control Patient Directory");
 
         jLabel2.setText("Name :");
+
+        jLabel6.setText("Contact-Number :");
 
         drpGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
         drpGender.setSelectedIndex(-1);
@@ -96,6 +91,8 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Gender :");
 
+        lblHospName.setText("Street:");
+
         jLabel5.setText("City :");
 
         btnDelete.setText("Delete");
@@ -104,6 +101,8 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
+
+        lblHospName1.setText("House No.:");
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -132,40 +131,39 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                             .addComponent(btnView)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnDelete))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtName)
-                                    .addComponent(txtAge)
-                                    .addComponent(txtContactNumber)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(88, 88, 88)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblHospName1)
-                                    .addComponent(lblHospName))
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtHospName, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                                    .addComponent(txtDocId)))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(23, 23, 23)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(191, 191, 191)
-                        .addComponent(lblTitleDoc)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addComponent(lblTitleDoc))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txtAge)
+                            .addComponent(txtContactNumber)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHospName1)
+                            .addComponent(lblHospName))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtStreet)
+                            .addComponent(txtHouseNo, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,13 +177,13 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete)
                     .addComponent(btnView)
                     .addComponent(btnUpdate))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblHospName)
-                            .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -194,7 +192,7 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                     .addComponent(jLabel3)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblHospName1)
-                    .addComponent(txtDocId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtHouseNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -208,7 +206,7 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -222,52 +220,51 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex = tblDoctor.getSelectedRow();
+        int selectedRowIndex = tblPatient.getSelectedRow();
         if(selectedRowIndex<0){
             JOptionPane.showMessageDialog(this,"Please Selecta row to delete");
             return ;
         }
 
-        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
-        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndex, 0);
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
 
-        docHistory.deleteDoctor(selectedDoctor);
+        pathistory.deletePatient(selectedPatient);
         JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
-        populateTable();
-
+        populatePatientTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndedx = tblDoctor.getSelectedRow();
+        int selectedRowIndex = tblPatient.getSelectedRow();
 
-        if(selectedRowIndedx<0){
+        if(selectedRowIndex<0){
 
             JOptionPane.showMessageDialog(this, "Please select a row to update details.");
             return;
         }
-        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
-        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndedx , 0);
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
 
-        if(tblDoctor.getSelectedRowCount() == 1){
+        if(tblPatient.getSelectedRowCount() == 1){
             String Name = txtName.getText();
             String Age = txtAge.getText();
             String Gender = txtGender.getText();
             String City = txtCity.getText();
             String ContactNumber = txtContactNumber.getText();
-            String HospName = txtHospName.getText();
-            String DocId = txtDocId.getText();
+            String Street = txtStreet.getText();
+            String HouseNo = txtHouseNo.getText();
 
-            selectedDoctor.setName(Name);
-            selectedDoctor.setAge(Age);
-            selectedDoctor.setGender(Gender);
-            selectedDoctor.setCity(City);
-            selectedDoctor.setPhoneNumber(ContactNumber);
-            selectedDoctor.setHospName(HospName);
-            selectedDoctor.setDocId(DocId);
+            selectedPatient.setName(Name);
+            selectedPatient.setAge(Age);
+            selectedPatient.setGender(Gender);
+            selectedPatient.setCity(City);
+            selectedPatient.setPhoneNumber(ContactNumber);
+            selectedPatient.setStreet(Street);
+            selectedPatient.setHouseNo(HouseNo);
 
-            docHistory.updatedDoctor(selectedDoctor, selectedRowIndedx);
-            populateTable();
+            pathistory.updatedPatient(selectedPatient, selectedRowIndex);
+            populatePatientTable();
 
             txtAge.setText("");
             txtCity.setText("");
@@ -275,11 +272,11 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
             txtGender.setText("");
             txtName.setText("");
             drpGender.setSelectedIndex(-1);
-            txtHospName.setText("");
-            txtDocId.setText("");
+            txtStreet.setText("");
+            txtHouseNo.setText("");
 
         } else{
-            if(tblDoctor.getSelectedRowCount() == 0){
+            if(tblPatient.getSelectedRowCount() == 0){
                 JOptionPane.showMessageDialog(this, "Table is empty.");
             }else{
                 JOptionPane.showMessageDialog(this, "Please select a row to update.");
@@ -289,24 +286,24 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndedx = tblDoctor.getSelectedRow();
+        int selectedRowIndex = tblPatient.getSelectedRow();
 
-        if(selectedRowIndedx<0){
+        if(selectedRowIndex<0){
 
             JOptionPane.showMessageDialog(this, "Please select a row to view details.");
             return;
         }
 
-        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
-       Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndedx , 0);
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
 
-        txtName.setText(selectedDoctor.getName());
-        txtAge.setText(selectedDoctor.getAge());
-        txtGender.setText(selectedDoctor.getGender());
-        txtCity.setText(selectedDoctor.getCity());
-        txtContactNumber.setText(selectedDoctor.getPhoneNumber());
-        txtHospName.setText(selectedDoctor.getHospName());
-        txtDocId.setText(selectedDoctor.getDocId());
+        txtName.setText(selectedPatient.getName());
+        txtAge.setText(selectedPatient.getAge());
+        txtGender.setText(selectedPatient.getGender());
+        txtCity.setText(selectedPatient.getCity());
+        txtContactNumber.setText(selectedPatient.getPhoneNumber());
+        txtStreet.setText(selectedPatient.getStreet());
+        txtHouseNo.setText(selectedPatient.getHouseNo());
     }//GEN-LAST:event_btnViewActionPerformed
 
 
@@ -324,35 +321,33 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblHospName;
     private javax.swing.JLabel lblHospName1;
     private javax.swing.JLabel lblTitleDoc;
-    private javax.swing.JTable tblDoctor;
+    private javax.swing.JTable tblPatient;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtContactNumber;
-    private javax.swing.JTextField txtDocId;
     private javax.swing.JTextField txtGender;
-    private javax.swing.JTextField txtHospName;
+    private javax.swing.JTextField txtHouseNo;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtStreet;
     // End of variables declaration//GEN-END:variables
 
-public void populateTable(){
-         DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
+
+public void populatePatientTable(){
+         DefaultTableModel model = (DefaultTableModel) tblPatient.getModel();
         model.setRowCount(0);
          
-        for(Doctor d : docHistory.getDoctorhistory()){
+        for(Patient pat : pathistory.getPatienthistory()){
             Object[] row = new Object[7];
-            row[0] = d;
-            row[1]=d.getAge();
-            row[2]=d.getGender();
-            row[3]=d.getCity();
-            row[4]=d.getPhoneNumber();
-            row[5]=d.getHospName();
-            row[6]=d.getDocId();
+            row[0] = pat;
+            row[1]=pat.getAge();
+            row[2]=pat.getGender();
+            row[3]=pat.getCity();
+            row[4]=pat.getPhoneNumber();
+            row[5]=pat.getStreet();
+            row[6]=pat.getHouseNo();
             
             model.addRow(row);
         }
     }
-
-
-
 
 }

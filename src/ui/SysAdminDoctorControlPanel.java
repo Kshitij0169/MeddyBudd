@@ -233,7 +233,7 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
 
         docHistory.deleteDoctor(selectedDoctor);
         JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
-        populateTable();
+        populateDoctorTable();
 
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -267,7 +267,7 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
             selectedDoctor.setDocId(DocId);
 
             docHistory.updatedDoctor(selectedDoctor, selectedRowIndedx);
-            populateTable();
+            populateDoctorTable();
 
             txtAge.setText("");
             txtCity.setText("");
@@ -334,7 +334,7 @@ public class SysAdminDoctorControlPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 
-public void populateTable(){
+public void populateDoctorTable(){
          DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
         model.setRowCount(0);
          

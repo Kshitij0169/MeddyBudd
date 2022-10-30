@@ -24,7 +24,7 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
     public SysAdminPersonControlPanel(PersonHistory perHistory) {
         initComponents();        
         this.perHistory=perHistory;
-        populateTable();
+        populatePersonTable();
     }
 
     /**
@@ -164,8 +164,7 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
                                 .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -180,11 +179,11 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnView)
-                        .addComponent(btnUpdate)))
+                        .addComponent(btnUpdate))
+                    .addComponent(btnDelete))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -223,7 +222,7 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
         
         perHistory.deletePerson(selectedPerson);
         JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
-         populateTable();
+         populatePersonTable();
          
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -287,7 +286,7 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
              selectedPerson.setPhoneNumber(ContactNumber);
              
              perHistory.updatedPerson(selectedPerson, selectedRowIndedx);
-             populateTable();
+             populatePersonTable();
              
              txtAge.setText("");
              txtCity.setText("");       
@@ -327,7 +326,7 @@ public class SysAdminPersonControlPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
-public void populateTable(){
+public void populatePersonTable(){
          DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
         model.setRowCount(0);
          
