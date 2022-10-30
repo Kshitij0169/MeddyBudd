@@ -57,9 +57,10 @@ public class Login_Page extends javax.swing.JFrame {
         btnPerson = new javax.swing.JButton();
         btnCommunityAdmin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btnback = new javax.swing.JButton();
         AdminPersonControls = new javax.swing.JPanel();
-        btAddPatient = new javax.swing.JButton();
-        btnPatientD = new javax.swing.JButton();
+        btAddPerson = new javax.swing.JButton();
+        btnPersonD = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         SysAdminCreatePerson = new javax.swing.JPanel();
@@ -290,14 +291,17 @@ public class Login_Page extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
         jLabel2.setText("Admin Control Options");
 
+        btnback.setText("Logout");
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Admin_OptionsLayout = new javax.swing.GroupLayout(Admin_Options);
         Admin_Options.setLayout(Admin_OptionsLayout);
         Admin_OptionsLayout.setHorizontalGroup(
             Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Admin_OptionsLayout.createSequentialGroup()
-                .addGap(266, 266, 266)
-                .addComponent(jLabel2)
-                .addGap(19, 228, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Admin_OptionsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -308,6 +312,15 @@ public class Login_Page extends javax.swing.JFrame {
                     .addComponent(btnPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(267, 267, 267))
+            .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(jLabel2))
+                    .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(btnback)))
+                .addGap(19, 228, Short.MAX_VALUE))
         );
         Admin_OptionsLayout.setVerticalGroup(
             Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,19 +335,26 @@ public class Login_Page extends javax.swing.JFrame {
                 .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDoctor)
                     .addComponent(btnCommunityAdmin))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addComponent(btnback)
+                .addGap(39, 39, 39))
         );
 
         Work_panel.add(Admin_Options, "card3");
 
-        btAddPatient.setText("Add Patient");
-        btAddPatient.addActionListener(new java.awt.event.ActionListener() {
+        btAddPerson.setText("Add Person");
+        btAddPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAddPatientActionPerformed(evt);
+                btAddPersonActionPerformed(evt);
             }
         });
 
-        btnPatientD.setText("Patient Directory");
+        btnPersonD.setText("Person Directory");
+        btnPersonD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonDActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("To add a new person click here ⬇");
 
@@ -346,9 +366,9 @@ public class Login_Page extends javax.swing.JFrame {
             AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPersonControlsLayout.createSequentialGroup()
                 .addGap(141, 141, 141)
-                .addComponent(btAddPatient)
+                .addComponent(btAddPerson)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPatientD)
+                .addComponent(btnPersonD)
                 .addGap(206, 206, 206))
             .addGroup(AdminPersonControlsLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
@@ -366,8 +386,8 @@ public class Login_Page extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(33, 33, 33)
                 .addGroup(AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btAddPatient)
-                    .addComponent(btnPatientD))
+                    .addComponent(btAddPerson)
+                    .addComponent(btnPersonD))
                 .addGap(341, 341, 341))
         );
 
@@ -425,11 +445,9 @@ public class Login_Page extends javax.swing.JFrame {
                                 .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtCity))
-                        .addContainerGap(371, Short.MAX_VALUE))
-                    .addGroup(SysAdminCreatePersonLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtCity)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(283, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreatePersonLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSubmit)
@@ -1261,9 +1279,7 @@ public class Login_Page extends javax.swing.JFrame {
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        MainAdminJFrame maj = new MainAdminJFrame();
-        maj.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_btnRegisterActionPerformed
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
@@ -1279,9 +1295,10 @@ public class Login_Page extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCommunityAdminActionPerformed
 
-    private void btAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddPatientActionPerformed
+    private void btAddPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddPersonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btAddPatientActionPerformed
+        switchpane(SysAdminCreatePerson);
+    }//GEN-LAST:event_btAddPersonActionPerformed
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
@@ -1698,6 +1715,16 @@ public class Login_Page extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_drpGender5ActionPerformed
 
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+        // TODO add your handling code here:
+        switchpane(login_panel);
+    }//GEN-LAST:event_btnbackActionPerformed
+
+    private void btnPersonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonDActionPerformed
+        // TODO add your handling code here:
+        switchpane(SysAdminPatientControl);
+    }//GEN-LAST:event_btnPersonDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1727,10 +1754,12 @@ public class Login_Page extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+          PersonHistory perHistory = new PersonHistory() ;
+            PatientHistory pathistory = new PatientHistory();
+            DoctorHistory docHistory = new DoctorHistory();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_Page().setVisible(true);
+                new Login_Page(perHistory,pathistory,docHistory).setVisible(true);
             }
         });
     }
@@ -1745,7 +1774,7 @@ public class Login_Page extends javax.swing.JFrame {
     private javax.swing.JPanel SysAdminPatientControl;
     private javax.swing.JPanel SysAdminPersonControls;
     private javax.swing.JPanel Work_panel;
-    private javax.swing.JButton btAddPatient;
+    private javax.swing.JButton btAddPerson;
     private javax.swing.JButton btnAddDoctor;
     private javax.swing.JButton btnAddPatient;
     private javax.swing.JButton btnCommunityAdmin;
@@ -1755,8 +1784,8 @@ public class Login_Page extends javax.swing.JFrame {
     private javax.swing.JButton btnDoctor;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnPatient;
-    private javax.swing.JButton btnPatientD;
     private javax.swing.JButton btnPerson;
+    private javax.swing.JButton btnPersonD;
     private javax.swing.JButton btnRegister;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnUpdate;
@@ -1767,6 +1796,7 @@ public class Login_Page extends javax.swing.JFrame {
     private javax.swing.JButton btnView2;
     private javax.swing.JButton btnView3;
     private javax.swing.JButton btnView4;
+    private javax.swing.JButton btnback;
     private javax.swing.JComboBox<String> drpGender;
     private javax.swing.JComboBox<String> drpGender1;
     private javax.swing.JComboBox<String> drpGender2;
