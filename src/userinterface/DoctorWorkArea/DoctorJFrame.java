@@ -8,6 +8,7 @@ import userinterface.SystemWorkArea.Doctor.SystemDoctorWorkPanel;
 import userinterface.SystemWorkArea.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import model.DoctorDirectory;
 import model.HospitalDirectory;
 import model.PatientDirectory;
@@ -201,6 +202,10 @@ public class DoctorJFrame extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
+        JFrame jFrame = (JFrame) SwingUtilities.getRoot(this);
+        jFrame.dispose();
+        MainJFrame mainFrame = new MainJFrame();             
+        mainFrame.main(null);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**

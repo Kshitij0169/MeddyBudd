@@ -145,8 +145,8 @@ public class HospitalViewDoctor extends javax.swing.JPanel {
         }
 
         DefaultTableModel model = (DefaultTableModel) tblDoctorList.getModel();
-        Patient selectedPatient = (Patient) model.getValueAt(selectedRowIndex,0 );
-        doctorDirectory.deleteDoctor(selectedPatient);
+        Patient selectedDoctor = (Patient) model.getValueAt(selectedRowIndex,0 );
+        doctorDirectory.deleteDoctor(selectedDoctor);
 
         JOptionPane.showMessageDialog(this, "Patient deleted successfully!");
         populateData();

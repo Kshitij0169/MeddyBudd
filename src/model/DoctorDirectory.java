@@ -31,7 +31,7 @@ public class DoctorDirectory {
         community.setCommunity(communities);
         house.setCommunity(community);
        
-        Doctor d = new Doctor("Babloo",Long.parseLong("1234567890"), "babloo.singh@gmail.com", 22, "Male", house, 1999, new Date(), DoctorSpecialization.DiagnosticRadiology,"123");
+        Doctor d = new Doctor("Kshitij",Long.parseLong("1234567890"), "Kshitij@gmail.com", 22, "Male", house, 1999, new Date(), DoctorSpecialization.DiagnosticRadiology,"123");
        
         this.doctors.add(d);
     }

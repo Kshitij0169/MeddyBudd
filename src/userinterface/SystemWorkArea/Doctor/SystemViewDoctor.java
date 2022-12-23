@@ -6,10 +6,12 @@ package userinterface.SystemWorkArea.Doctor;
 
 import java.text.SimpleDateFormat;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Doctor;
 import model.DoctorDirectory;
 import model.DoctorSpecialization;
+import model.Patient;
 import model.PersonDirectory;
 import userinterface.SystemWorkArea.Patient.*;
 
@@ -94,6 +96,11 @@ public class SystemViewDoctor extends javax.swing.JPanel {
         });
 
         btnSearchDoctor.setText("Search");
+        btnSearchDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchDoctorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -137,29 +144,29 @@ public class SystemViewDoctor extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
 
-        //        int selectedRowIndex = tblEmployeeList.getSelectedRow();
-        //
-        //        if(selectedRowIndex<0){
-            //            JOptionPane.showMessageDialog(this, "Please select a row to delete");
-            //            return;
-            //        }
-        //
-        //        DefaultTableModel model = (DefaultTableModel) tblEmployeeList.getModel();
-        //        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex,0 );
-        //        employeeList.deleteEmployee(selectedEmployee);
-        //
-        //        JOptionPane.showMessageDialog(this, "Employee deleted successfully!");
-        //
-        //        populateEmployeeTable();
-        //        txtTeamInfo.setText("");
-        //        txtCellPhoneNumber.setText("");
-        //        txtEmailAddress.setText("");
-        //        lblDisplayPhoto.setIcon(null);
+//        int selectedRowIndex = tblDoctorList.getSelectedRow();
+//
+//        if(selectedRowIndex<0){
+//            JOptionPane.showMessageDialog(this, "Please select a row to delete");
+//            return;
+//        }
+//
+//        DefaultTableModel model = (DefaultTableModel) tblDoctorList.getModel();
+//        Doctor selectedDoctor = (Doctor) model.getValueAt(selectedRowIndex,0 );
+//        doctorDirectory.deleteDoctor(selectedDoctor);
+//
+//        JOptionPane.showMessageDialog(this, "Patient deleted successfully!");
+//        populateData();
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void txtSearchDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchDoctorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchDoctorActionPerformed
+
+    private void btnSearchDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchDoctorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
